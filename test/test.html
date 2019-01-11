@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>QUnit Test Suite</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.1.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">
+
+    <!-- qunit-fixture contains a basic skeleton of index.html to test functions associated with DOM manipulation.
+         It is reset between every test that is run. -->
+
+    <div id="input">
+        <table id="input-table">
+            <thead id="input-table-head">
+                <tr>
+                    <th id="label-recipient" scope="col">Recipient</th>
+                    <th id="label-amount" scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody id="input-table-body">
+                <tr>
+                    <td><input name="receiver" class="textbox recipient-textbox" value="vikram@test.com" /></td>
+                    <td><input name="amount" class="textbox amount-textbox" maxlength="12" value="45" /></td>
+                </tr>
+                <tr>
+                    <td><input name="receiver" class="textbox recipient-textbox" value="ike@test.com" /></td>
+                    <td><input name="amount" class="textbox amount-textbox" maxlength="12" value="$123.25" /></td>
+                </tr>
+                <tr>
+                    <td><input name="receiver" class="textbox recipient-textbox" /></td>
+                    <td><input name="amount" class="textbox amount-textbox" maxlength="12" /></td>
+                </tr>
+            </tbody>
+            <tbody id="input-table-footer">
+                <tr>
+                    <td colspan="2">
+                        <h3>$<span id="total-amount">0.00</span></h3>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="errors-section" style="display: none;">
+            <h5 id="error-title">ERROR</h5>
+        </div>
+    </div>
+
+    <div id="success" style="display: none;">
+        <h2>Your Masspay is in progress!</h2>
+        <small>TOTAL</small>
+        <h1>$<span id="total-submitted">0.00</span></h1>
+        
+        <button id="new-masspay-btn">Create another Masspay</button>
+    </div>
+  </div>
+
+  <!-- jQuery can't trigger buttons within qunit-fixture, so adding out here -->
+  <button id="add-btn" type="button">+</button>
+  <button id="submit-btn">Submit</button>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../Masspay.js"></script>
+  <script src="../main.js"></script>
+  <script src="https://code.jquery.com/qunit/qunit-2.9.1.js"></script>
+  <script src="tests.js"></script>
+</body>
+</html>

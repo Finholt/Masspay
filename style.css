@@ -1,0 +1,62 @@
+body {
+    font-family: "Roboto";
+    background: #f4f7fb;
+}
+th {
+    color: #8393aa;
+}
+
+.textbox {
+    background-color: #f4f7fb;
+    border: none;
+}
+.shadow {
+    box-shadow: 0 0 2px 0 rgba(53, 65, 83, 0.12), 0 2px 4px 0 rgba(53, 65, 83, 0.12);
+}
+.verticalLine {
+    border-left: 1px solid white;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.header-text {
+    font-family: "Poppins";
+}
+
+#navbar {
+    background-image: linear-gradient(90deg, #e98453, #b45277);
+}
+#header {
+    background: white;
+    height: 7rem;
+    margin-bottom: 3rem;
+}
+#add-btn {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: -2rem;
+    right: 0%;
+    bottom: -50%;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+/* Bootstrap Overrides */
+.btn-primary {
+    background-color: #5e4e76;
+    border: none;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus, .btn-primary:active:focus {
+    background-color: #4f4263;
+}
+.navbar-dark, .navbar-dark .navbar-text {
+    color: white;
+}
+.align-middle {
+    display: inline-block;
+    margin-bottom: 0;
+}
+.table {
+    margin-bottom: 0;
+}

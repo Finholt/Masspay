@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Masspay | Tech Problem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300|Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn.dwolla.com/com/prod/20180930014837/cropped-favicon-32x32-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://cdn.dwolla.com/com/prod/20180930014837/cropped-favicon-32x32-192x192.png" sizes="192x192">
+</head>
+
+<body>
+    <!-- navigation -->
+    <nav id="navbar" class="navbar navbar-dark" role="navigation">
+        <div id="left-nav">
+            <a class="navbar-brand">
+                <img src="https://cdn.dwolla.com/images/cms/logos/dwolla/dwolla-logo-white-all.svg" alt="Dwolla" width="150" height="38.5" />
+            </a>
+            <span class="verticalLine d-none d-md-inline"></span>
+            <span class="navbar-text d-none d-md-inline font-italic">Masspay</span>
+        </div>
+
+        <div id="right-nav" class="ml-auto">
+            <span id="username" class="navbar-text d-none d-md-inline">Joel Testfin</span>
+            <button id="log-out-btn" class="btn btn-outline-light ml-3" type="button">Log out</button>
+        </div>
+    </nav>
+    <!-- end navigation -->
+
+    <div id="input">
+        <!-- header -->
+        <nav id="header" class="navbar navbar-light shadow" role="banner">
+            <div class="col-md-8 offset-md-2 col-sm-12">
+                <h1 class="header-text">Create a Masspay</h1>
+                <button id="add-btn" aria-label="Add additional Masspay recipient" class="btn btn-primary"  type="button">+</button>
+            </div>
+        </nav>
+        <!-- end header -->
+
+        <!-- masspay input -->
+        <div class="col-md-8 offset-md-2 col-sm-12 mb-3" role="main">
+            <div class="card shadow">
+                <table class="table" id="input-table">
+                    <thead id="input-table-head">
+                        <tr>
+                            <th id="label-recipient" scope="col">Recipient</th>
+                            <th id="label-amount" scope="col">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="input-table-body">
+                        <tr>
+                            <td>
+                                <input name="receiver" type="email" class="textbox recipient-textbox form-control" aria-labelledby="label-recipient" placeholder="Enter Email Address" />
+                            </td>
+                            <td>
+                                <input name="amount" type="text" class="textbox amount-textbox form-control text-right" maxlength="12" aria-labelledby="label-amount" placeholder="Enter Dollar Amount" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="receiver" type="email" class="textbox recipient-textbox form-control" aria-labelledby="label-recipient" placeholder="Enter Email Address" />
+                            </td>
+                            <td>
+                                <input name="amount" type="text" class="textbox amount-textbox form-control text-right" maxlength="12" aria-labelledby="label-amount" placeholder="Enter Dollar Amount" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="receiver" type="email" class="textbox recipient-textbox form-control" aria-labelledby="label-recipient" placeholder="Enter Email Address" />
+                            </td>
+                            <td>
+                                <input name="amount" type="text" class="textbox amount-textbox form-control text-right" maxlength="12" aria-labelledby="label-amount" placeholder="Enter Dollar Amount" />
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody id="input-table-footer">
+                        <tr>
+                            <td colspan="2" class="text-right">
+                                <h3 class="align-middle">$<span id="total-amount">0.00</span></h3>
+                                <button id="submit-btn" class="btn btn-primary btn-lg ml-1" type="button">Submit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end masspay input -->
+
+        <!-- errors -->
+        <div id="errors-section" class="col-md-8 offset-md-2 col-sm-12" style="display: none;">
+            <div class="alert alert-danger" role="alert">
+                <h5 id="error-title">ERROR</h5>
+            </div>
+        </div>
+        <!-- end errors -->
+    </div>
+
+    <!-- success message -->
+    <div id="success" class="mt-5" style="display: none;">
+        <div class="col-md-8 offset-md-2 col-sm-12">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h2 class="header-text">Your Masspay is in progress!</h2>
+                    <small>TOTAL</small>
+                    <h1>$<span id="total-submitted">0.00</span></h1>
+                    
+                    <button id="new-masspay-btn" class="btn btn-primary"  type="button">Create another Masspay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end success message -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="Masspay.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
