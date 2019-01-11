@@ -30,6 +30,6 @@ could help prevent the CSS from getting too messy
 refreshes the page, but I would rather not do that and instead switch back to the other view
 after clearing the data, resetting number of rows, etc.
 - Implement a warning system to help users avoid making duplicate payments. It would check
-to see if any two rows had the same recipient and amound before submitting. If it found a
+to see if any two rows had the same recipient and amount before submitting. If it found a
 duplicate, a popup modal would appear to display this, allowing the user to either cancel
 or continue.
