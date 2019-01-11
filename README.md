@@ -19,7 +19,7 @@ in terms of a long-term, easily maintained solution.
 ### Instructions for Running Unit Tests
 
 1. Download files to local machine
-2. Open test/test.html
+2. Open test/test.html (Tests run automatically when file is opened)
 
 ### Ideas if I had more time
 
