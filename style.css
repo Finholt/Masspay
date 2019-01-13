@@ -2,7 +2,7 @@ body {
     font-family: "Roboto";
     background: #f4f7fb;
 }
-th {
+th, small {
     color: #8393aa;
 }
 
