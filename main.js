@@ -117,7 +117,7 @@ function validateOnSubmit(recipients, amounts, items, knownReceivers) {
             isError = true;
         }
         if(!amount || !Masspay().isValidAmount(amount)) {
-            errors.push("Recipient " + recipient + " does not have a valid payment amount.");
+            errors.push("Recipient " + (recipient ? recipient : (i+1)) + " does not have a valid payment amount.");
             isError = true;
         }
         if(recipient && !(knownReceivers.includes(recipient))) {
