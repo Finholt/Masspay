@@ -89,8 +89,9 @@ function updateTotals(amounts) {
     var total = 0;
     
     for(var i = 0; i < amounts.length; i++) {
-        if(amounts[i].replace(/[^\d.-]/g, '')) {
-            total += parseFloat(amounts[i].replace(/[^\d.-]/g, ''));
+        var amount = amounts[i].replace(/\$/g, '');
+        if(amount && !isNaN(amount) && isFinite(amount)) {
+            total += parseFloat(amount);
         }
     }
 
@@ -103,7 +104,7 @@ function validateOnSubmit(recipients, amounts, items, knownReceivers) {
 
     for(var i = 0; i < recipients.length; i++) {
         var recipient = recipients[i];
-        var amount = amounts[i].replace(/[^\d.-]/g, '');
+        var amount = amounts[i].replace(/\$/g, '');
         var isError = false;
         var item = {};
         
