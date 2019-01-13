@@ -60,10 +60,10 @@ $(document).ready(function(){
             $('#input-table-body tr:last').after(
                 '<tr>'
                     +'<td>'
-                        +'<input name="receiver" type="email" class="textbox recipient-textbox form-control" aria-labelledby="label-recipient" placeholder="Enter Email Address" />'
+                        +'<input name="receiver" type="email" class="textbox recipient-textbox form-control" aria-labelledby="label-recipient" placeholder="Email Address" />'
                     +'</td>'
                     +'<td>'
-                        +'<input name="amount" type="text" class="textbox amount-textbox form-control" maxlength="12" aria-labelledby="label-amount" placeholder="Enter Dollar Amount" style="text-align: right;" />'
+                        +'<input name="amount" type="text" class="textbox amount-textbox form-control" maxlength="12" aria-labelledby="label-amount" placeholder="Dollar Amount" style="text-align: right;" />'
                     +'</td>'
                 +'</tr>'
             );
