@@ -28,6 +28,17 @@ QUnit.test("updateTotals - totals updated, various input strings", function(asse
     assert.equal($("#total-submitted").text(), "249.99", "$249.99 added to total");
 });
 
+QUnit.test("updateTotals - totals updated, but bad input is ignored - Added to test issue and fix for issue #3", function(assert) {
+    assert.equal($("#total-amount").text(), "0.00", "Page loads with $0 as total");
+    assert.equal($("#total-submitted").text(), "0.00", "Page loads with $0 as total");
+
+    var amounts = ["44.99", "77dollars-bad", "55", "$150.001", "bad5input4"];
+    updateTotals(amounts);
+
+    assert.equal($("#total-amount").text(), "249.99", "$249.99 added to total");
+    assert.equal($("#total-submitted").text(), "249.99", "$249.99 added to total");
+});
+
 QUnit.test("displayErrors - displays all errors", function(assert) {
     assert.ok(($('#errors-section').css("display") == "none"), "Error section in DOM does not display before method call");
     
@@ -79,6 +90,18 @@ QUnit.test("validateOnSubmit - errors with amounts", function(assert) {
 
     assert.equal(returnedErrors.length, 1, "Correct number of errors were returned for this input");
     assert.ok(returnedErrors.includes("Recipient vikram@test.com does not have a valid payment amount."), "Amount not entered error");
+});
+QUnit.test("validateOnSubmit - errors with amounts - badinput with no recipient - Added to test issue and fix for issue #4", function(assert) {
+    var recipients = ["vikram@test.com", "", ""];
+    var amounts = ["$123.25", "badinput", ""];
+    var items = [];
+    var knownReceivers = ["joel@test.com", "vikram@test.com"];
+
+    var returnedErrors = validateOnSubmit(recipients, amounts, items, knownReceivers);
+
+    assert.equal(returnedErrors.length, 2, "Correct number of errors were returned for this input");
+    assert.ok(returnedErrors.includes("Recipient 2 does not have a valid payment amount."), "badinput error for Amount");
+    assert.ok(returnedErrors.includes("Recipient 2 does not have a valid email address."), "Invalid recipient error when not entered with badinput for Amount");
 });
 QUnit.test("validateOnSubmit - no recipients or amounts entered", function(assert) {
     var recipients = ["", "", ""];
